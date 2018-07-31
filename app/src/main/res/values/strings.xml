@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Hope</string>
+    <string name="title_home">首页</string>
+    <string name="title_find">发现</string>
+    <string name="title_mine">我的</string>
+    <string name="refresh_succeed">更新成功</string>
+    <string name="refresh_failed">更新失败</string>
+    <string name="load_more_succeed">加载更多成功</string>
+    <string name="load_more_failed">加载更多失败</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <integer name="news_tab_recommend_id">0</integer>
+    <string name="news_tab_recommend_label">推荐</string>
+    <string name="news_tab_recommend_tag">recommend</string>
+    <integer name="news_tab_video_id">1</integer>
+    <string name="news_tab_video_label">视频</string>
+    <string name="news_tab_video_tag">video</string>
+    <integer name="news_tab_local_id">2</integer>
+    <string name="news_tab_local_label">本地</string>
+    <string name="news_tab_local_tag">local</string>
+
+    <string name="comment">%d评论</string>
+
+    <string name="image_list_zero">0</string>
+    <string name="image_list_one">1</string>
+    <string name="image_list_two">2</string>
+
+    <!-- 详情页 -->
+    <string name="detail_label">详情页</string>
+    <string name="detail_menu_share">分享</string>
+
+    <!-- 重试页面 -->
+    <string name="progressActivityErrorButton">重试</string>
+    <string name="progressActivityEmptyTitlePlaceholder">无任何数据</string>
+    <string name="progressActivityEmptyContentPlaceholder">无任何数据\n是不是进错门了？</string>
+    <string name="progressActivityErrorTitlePlaceholder">无法连接</string>
+    <string name="progressActivityErrorContentPlaceholder">无法连接到服务器\n请检查网络并重试</string>
+
+
+</resources>
