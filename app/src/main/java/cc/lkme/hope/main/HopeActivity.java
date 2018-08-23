@@ -15,6 +15,7 @@ import cc.lkme.hope.BaseActivity;
 import cc.lkme.hope.R;
 import cc.lkme.hope.databinding.HopeActBinding;
 import cc.lkme.hope.main.explore.ExploreFragment;
+import cc.lkme.hope.main.mine.MineFragment;
 import cc.lkme.hope.main.news.NewsFragment;
 import cc.lkme.hope.utils.ActivityUtils;
 import dagger.android.DispatchingAndroidInjector;
@@ -76,6 +77,13 @@ public class HopeActivity extends BaseActivity implements HasSupportFragmentInje
                                 getSupportFragmentManager(), exploreFragment, R.id.contentFrame, "hope_explore");
                         break;
                     case 2:
+                        MineFragment mineFragment = (MineFragment) viewModel.getNavigationFragments().getValue().get(2);
+                        if (mineFragment == null) {
+                            mineFragment = MineFragment.newInstance();
+                            viewModel.getNavigationFragments().getValue().put(2, mineFragment);
+                        }
+                        ActivityUtils.showFragmentInActivity(
+                                getSupportFragmentManager(), mineFragment, R.id.contentFrame, "hope_mine");
                         break;
                 }
             }

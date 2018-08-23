@@ -64,6 +64,13 @@ public class DetailFragment extends BaseFragment {
         initWebView();
     }
 
+    @Override
+    public void onDestroyView() {
+        // 因为binding已经被销魂了，因此在此处需要销毁WebView，防止WebView监听方法产生空指针异常
+        binding.get().webView.destroy();
+        super.onDestroyView();
+    }
+
     public void initToolBar(Toolbar toolbar) {
         toolbar.setNavigationIcon(R.drawable.va_back);
         toolbar.inflateMenu(R.menu.detail_menu);
@@ -167,11 +174,5 @@ public class DetailFragment extends BaseFragment {
         binding.get().webView.loadUrl(articleUrl);
     }
 
-    @Override
-    public void onDestroyView() {
-        // 因为binding已经被销魂了，因此在此处需要销毁WebView，防止WebView监听方法产生空指针异常
-        binding.get().webView.destroy();
-        super.onDestroyView();
-    }
 
 }

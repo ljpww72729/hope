@@ -61,6 +61,7 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintEnd_toStartOf="@+id/img_three"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:tag="@string/image_list_one"/>
 
             <com.facebook.drawee.view.SimpleDraweeView
@@ -76,7 +77,8 @@
                     android:layout_marginTop="8dp"
                     app:layout_constraintStart_toEndOf="@+id/img_two"
                     app:layout_constraintHorizontal_bias="0.5"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"/>
 
             <include
                     android:id="@+id/layout_comment"

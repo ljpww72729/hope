@@ -1,6 +1,7 @@
 package cc.lkme.hope.utils;
 
 import android.app.Application;
+import android.support.annotation.StringRes;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,8 +15,12 @@ public class AndroidUtils {
         this.application = application;
     }
 
-    public String getString(int stringId) {
+    public String getString(@StringRes int stringId) {
         return application.getString(stringId);
+    }
+
+    public String getString(@StringRes int resId, Object... formatArgs) {
+        return application.getString(resId, formatArgs);
     }
 
 }

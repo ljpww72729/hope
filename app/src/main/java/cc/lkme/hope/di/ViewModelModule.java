@@ -5,15 +5,18 @@ import android.arch.lifecycle.ViewModelProvider;
 
 import cc.lkme.hope.ViewModelFactory;
 import cc.lkme.hope.main.HopeViewModel;
+import cc.lkme.hope.main.mine.MineViewModel;
+import cc.lkme.hope.main.mine.settings.SettingsViewModel;
 import cc.lkme.hope.main.news.NewsViewModel;
 import cc.lkme.hope.main.news.recommend.RecommendViewModel;
 import cc.lkme.hope.main.news.video.VideoViewModel;
+import cc.lkme.hope.main.news.video.detail.VideoDetailViewModel;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
 
 @Module
-public abstract class ViewModuleModule {
+public abstract class ViewModelModule {
 
     @Binds
     abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelFactory factory);
@@ -37,6 +40,21 @@ public abstract class ViewModuleModule {
     @IntoMap
     @ViewModelKey(VideoViewModel.class)
     abstract ViewModel bindVideoViewModel(VideoViewModel videoViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(VideoDetailViewModel.class)
+    abstract ViewModel bindVideoDetailViewModel(VideoDetailViewModel videoDetailViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MineViewModel.class)
+    abstract ViewModel bindMineViewModel(MineViewModel mineViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SettingsViewModel.class)
+    abstract ViewModel bindSettingsViewModel(SettingsViewModel settingsViewModel);
 
 
 }

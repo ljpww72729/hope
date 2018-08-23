@@ -1,4 +1,4 @@
-package cc.lkme.hope.main.news.video;
+package cc.lkme.hope.main.news.video.detail;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -19,9 +19,9 @@ import timber.log.Timber;
  * RecyclerView Adapter Created by LinkedME06 on 16/11/10.
  */
 // TODO: 22/03/2017 应该可以插入多个header或者footer
-public class VideoRecyclerViewAdapter<E> extends LPRecyclerViewAdapter {
+public class VideoDetailRecyclerViewAdapter<E> extends LPRecyclerViewAdapter {
 
-    public VideoRecyclerViewAdapter(ArrayList<E> mData, RecyclerView recyclerView, final BaseListViewModel viewModel) {
+    public VideoDetailRecyclerViewAdapter(ArrayList<E> mData, RecyclerView recyclerView, final BaseListViewModel viewModel) {
         super(mData, -1, -1, recyclerView, viewModel);
     }
 
@@ -34,7 +34,7 @@ public class VideoRecyclerViewAdapter<E> extends LPRecyclerViewAdapter {
             holder = new LPFooterViewHolder(mFooterBinding);
         } else if (viewType == TYPE_ITEM) {
             //data binding
-            ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.video_item, parent, false);
+            ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.video_detail_item, parent, false);
             holder = new LPRecyclerViewHolder(binding);
         } else {
             ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.recycler_view_load_more, parent, false);
@@ -51,7 +51,7 @@ public class VideoRecyclerViewAdapter<E> extends LPRecyclerViewAdapter {
             setLPHeaderViewHolder((LPHeaderViewHolder) holder);
         } else if (holder instanceof LPFooterViewHolder) {
             setLPFooterViewHolder((LPFooterViewHolder) holder);
-        } else if (holder instanceof VideoRecyclerViewAdapter.LPRecyclerViewHolder) {
+        } else if (holder instanceof VideoDetailRecyclerViewAdapter.LPRecyclerViewHolder) {
             int actualPostion = position;
             if (mHeaderBinding != null) {
                 actualPostion = actualPostion - 1;

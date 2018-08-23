@@ -1,4 +1,4 @@
-package cc.lkme.hope.main.news.video;
+package cc.lkme.hope.main.news.video.detail;
 
 import android.databinding.BindingAdapter;
 
@@ -9,7 +9,7 @@ import com.dueeeke.videoplayer.player.PlayerConfig;
 import cc.lkme.hope.R;
 
 public class IjkVideoViewBindings {
-    @BindingAdapter({"bind:actualVideoUri"})
+    @BindingAdapter({"actualVideoUri"})
     public static void setActualVideoUri(final IjkVideoView view, final String videoUrl) {
 
 //        int widthPixels = context.getResources().getDisplayMetrics().widthPixels;

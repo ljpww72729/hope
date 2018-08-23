@@ -7,12 +7,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme" parent="Base.AppTheme"/>
+    <style name="AppTheme" parent="Base.AppTheme">
+    </style>
 
     <style name="AppTheme.OverlapSystemBar" parent="Base.AppTheme"/>
 
-    <style name="Stream.Title" parent="TextAppearance.AppCompat.Medium">
+    <style name="Base.Title" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="Stream.Title" parent="TextAppearance.AppCompat.Medium">
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>

@@ -463,6 +463,7 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void hideLoadingView() {
         if (loadingStateRelativeLayout != null) {
             loadingStateRelativeLayout.setVisibility(GONE);
@@ -478,6 +479,7 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void hideEmptyView() {
         if (emptyStateRelativeLayout != null) {
             emptyStateRelativeLayout.setVisibility(GONE);
@@ -493,6 +495,7 @@ public class ProgressLayout extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void hideErrorView() {
         if (errorStateRelativeLayout != null) {
             errorStateRelativeLayout.setVisibility(GONE);

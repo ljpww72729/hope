@@ -32,7 +32,6 @@ public class RecommendFragment extends BaseListFragment {
     private NewsViewModel newsViewModel;
     private AutoClearedValue<RecommendRecyclerViewAdapter> adapter;
     private RecommendViewModel viewModel;
-    private static final String TAG = "NewsFragment";
 
     public static RecommendFragment newInstance() {
         return new RecommendFragment();

@@ -25,7 +25,7 @@ import timber.log.Timber;
 
 public class ItemsDataBinding {
 
-    @BindingAdapter("app:items")
+    @BindingAdapter("items")
     public static <T> void setItems(RecyclerView recyclerView, List<T> items) {
         LPRecyclerViewAdapter adapter = (LPRecyclerViewAdapter) recyclerView.getAdapter();
         if (adapter != null) {

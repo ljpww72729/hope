@@ -29,5 +29,4 @@ public abstract class HopeFragmentModule {
     @ContributesAndroidInjector
     abstract MineFragment contributeMineFragment();
 
-
 }

@@ -1,5 +1,6 @@
 package cc.lkme.hope;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import javax.inject.Inject;
 
+@SuppressLint("Registered")
 public class BaseActivity<T extends BaseViewModel> extends AppCompatActivity {
     public T baseViewModel;
     @Inject

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hope</string>
+    <string name="app_name">花生豆</string>
     <string name="title_home">首页</string>
     <string name="title_find">发现</string>
     <string name="title_mine">我的</string>
@@ -39,5 +39,24 @@
     <string name="progressActivityErrorTitlePlaceholder">无法连接</string>
     <string name="progressActivityErrorContentPlaceholder">无法连接到服务器\n请检查网络并重试</string>
 
+    <!-- 我的 -->
+    <string name="mine_invitation_code">输入邀请码</string>
+    <string name="mine_activity">限时活动</string>
+    <string name="mine_gold">领金币</string>
+    <string name="mine_award">邀请好友奖励</string>
+    <string name="mine_record">兑换记录</string>
+    <string name="mine_question">常见问题</string>
+    <string name="mine_setting">设置</string>
+
+    <!-- 设置 -->
+    <string name="settings_update_pwd">修改密码</string>
+    <string name="settings_complete_info">完善资料</string>
+    <string name="settings_font">字体大小</string>
+    <string name="settings_font_hide">未填写个人简介，点击补充</string>
+    <string name="settings_clean_cached">清除缓存</string>
+    <string name="settings_cached_data">%dM</string>
+    <string name="settings_suggestion">建议与反馈</string>
+    <string name="settings_privacy">隐私协议</string>
+    <string name="settings_about">关于我们</string>
 
 </resources>

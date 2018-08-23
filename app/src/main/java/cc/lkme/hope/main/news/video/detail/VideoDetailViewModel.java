@@ -1,4 +1,4 @@
-package cc.lkme.hope.main.news.video;
+package cc.lkme.hope.main.news.video.detail;
 
 import com.google.gson.Gson;
 
@@ -24,16 +24,18 @@ import cc.lkme.hope.data.test.ServerData;
 import cc.lkme.hope.data.test.ServerDataEntry;
 import timber.log.Timber;
 
-public class VideoViewModel extends BaseListViewModel {
+public class VideoDetailViewModel extends BaseListViewModel {
 
-    private final HopeRepository mHopeRepository;
+    // RecyclerView
     // 列表所有数据
     public final ObservableList<ListDataEntry> itemsData = new ObservableArrayList<>();
-    LiveData<Resource<ServerData>> serverData;
+    private final HopeRepository mHopeRepository;
     final MutableLiveData<Boolean> forceRefresh = new MutableLiveData<>();
+    LiveData<Resource<ServerData>> serverData;
+
 
     @Inject
-    public VideoViewModel(Application mApplication, HopeRepository hopeRepository) {
+    public VideoDetailViewModel(Application mApplication, HopeRepository hopeRepository) {
         super(mApplication);
         this.mHopeRepository = hopeRepository;
         Timber.d("%s created!", this.getClass().getSimpleName());

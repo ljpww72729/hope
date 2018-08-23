@@ -1,4 +1,4 @@
-package cc.lkme.hope.main.news.detail;
+package cc.lkme.hope.main.mine.settings;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class DetailActivity extends BaseActivity implements HasSupportFragmentInjector {
+public class SettingsActivity extends BaseActivity implements HasSupportFragmentInjector {
 
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -32,13 +32,13 @@ public class DetailActivity extends BaseActivity implements HasSupportFragmentIn
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.common_act);
-        DetailFragment detailFragment = DetailFragment.newInstance(getIntent().getExtras());
+        SettingsFragment settingsFragment = SettingsFragment.newInstance();
         ActivityUtils.replaceFragmentInActivity(
-                getSupportFragmentManager(), detailFragment, R.id.contentFrame);
+                getSupportFragmentManager(), settingsFragment, R.id.contentFrame);
     }
 
     public static void start(Context context, Bundle bundle) {
-        Intent starter = new Intent(context, DetailActivity.class);
+        Intent starter = new Intent(context, SettingsActivity.class);
         if (bundle != null) {
             starter.putExtras(bundle);
         }

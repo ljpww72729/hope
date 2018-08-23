@@ -68,7 +68,7 @@ public class MD5Utils {
             byteArray[4 + 8 * i] = (byte) (longArray[i] >> 24);
             byteArray[5 + 8 * i] = (byte) (longArray[i] >> 16);
             byteArray[6 + 8 * i] = (byte) (longArray[i] >> 8);
-            byteArray[7 + 8 * i] = (byte) (longArray[i] >> 0);
+            byteArray[7 + 8 * i] = (byte) (longArray[i]);
         }
         return byteArray;
     }

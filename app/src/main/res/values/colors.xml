@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-    <color name="video_mask">#DD000000</color>
-    <color name="video_transparent">#00000000</color>
+    <color name="videoMask">#DD000000</color>
+    <color name="videoTransparent">#00000000</color>
+    <color name="background">#21000000</color>
+    <color name="foreground">#eeffffff</color>
+    <color name="textHide">#21000000</color>
 </resources>

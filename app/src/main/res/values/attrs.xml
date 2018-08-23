@@ -24,4 +24,13 @@
         <attr name="errorBackgroundColor" format="color"/>
     </declare-styleable>
 
+    <!--<declare-styleable name="SplitLineVisibility">-->
+        <!--<attr name="split_line_visibility_sss" format="integer">-->
+            <!--<enum name="gone" value="8"/>-->
+            <!--<enum name="visible" value="0"/>-->
+            <!--<enum name="invisible" value="4"/>-->
+        <!--</attr>-->
+    <!--</declare-styleable>-->
+
+
 </resources>

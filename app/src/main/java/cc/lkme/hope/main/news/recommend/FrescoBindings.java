@@ -25,14 +25,14 @@ public class FrescoBindings {
      * @param view   需要绑定的组件类型(必选参数)
      * @param imgUrl 图片地址
      */
-    @BindingAdapter({"bind:actualImageUri"})
+    @BindingAdapter({"actualImageUri"})
     public static void setActualImageUri(final SimpleDraweeView view, final String imgUrl) {
         view.setImageURI(imgUrl);
 
 // TODO: 16/11/26 需要将该类提出来
     }
 
-    @BindingAdapter({"bind:actualImageUri"})
+    @BindingAdapter({"actualImageUri"})
     public static void setActualImageUri(final SimpleDraweeView view, final ArrayList<ImageData> imageDataArrayList) {
         if (imageDataArrayList != null && imageDataArrayList.size() > 0) {
             if (view.getTag() != null) {
@@ -61,9 +61,10 @@ public class FrescoBindings {
      * @param view   需要绑定的组件类型(必选参数)
      * @param imgUri 图片Uri地址
      */
-    @BindingAdapter({"bind:actualImageUri"})
+    @BindingAdapter({"actualImageUri"})
     public static void setActualImageUri(final SimpleDraweeView view, final Uri imgUri) {
         view.setImageURI(imgUri);
 // TODO: 16/11/26 需要将该类提出来
     }
+
 }

@@ -7,8 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.WorkerThread;
 
-import java.util.Objects;
-
 import cc.lkme.hope.utils.AppExecutors;
 
 /**
@@ -39,9 +37,13 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
 
     @MainThread
     private void setValue(Resource<ResultType> newValue) {
-        if (!Objects.equals(result.getValue(), newValue)) {
+        if (!NetworkBoundResource.equals(result.getValue(), newValue)) {
             result.setValue(newValue);
         }
+    }
+
+    public static boolean equals(Object a, Object b) {
+        return (a == b) || (a != null && a.equals(b));
     }
 
     private void fetchFromNetwork(final LiveData<ResultType> dbSource) {
