@@ -59,19 +59,19 @@ public class ListDataEntry extends EmptyData implements Parcelable {
         this.author = author;
     }
 
-    public String getAvator() {
-        return avator;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvator(String avator) {
-        this.avator = avator;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public static Creator<ListDataEntry> getCREATOR() {
         return CREATOR;
     }
 
-    private String avator;
+    private String avatar;
 
     public ListDataEntry() {
     }
@@ -95,7 +95,7 @@ public class ListDataEntry extends EmptyData implements Parcelable {
         dest.writeString(this.video_url);
         dest.writeString(this.title);
         dest.writeString(this.author);
-        dest.writeString(this.avator);
+        dest.writeString(this.avatar);
     }
 
     protected ListDataEntry(Parcel in) {
@@ -104,7 +104,7 @@ public class ListDataEntry extends EmptyData implements Parcelable {
         this.video_url = in.readString();
         this.title = in.readString();
         this.author = in.readString();
-        this.avator = in.readString();
+        this.avatar = in.readString();
     }
 
     public static final Creator<ListDataEntry> CREATOR = new Creator<ListDataEntry>() {

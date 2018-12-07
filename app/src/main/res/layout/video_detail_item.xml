@@ -46,7 +46,7 @@
             <com.facebook.drawee.view.SimpleDraweeView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:id="@+id/avator"
+                    android:id="@+id/avatar"
                     app:roundAsCircle="true"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/title"
@@ -54,21 +54,21 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:actualImageUri="@{listData.avator}"
+                    app:actualImageUri="@{listData.avatar}"
                     android:layout_marginBottom="8dp"/>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/author"
-                    app:layout_constraintStart_toEndOf="@+id/avator"
+                    app:layout_constraintStart_toEndOf="@+id/avatar"
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     tools:text="作者"
                     android:text="@{listData.author}"
-                    app:layout_constraintTop_toTopOf="@+id/avator"
+                    app:layout_constraintTop_toTopOf="@+id/avatar"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/avator"
+                    app:layout_constraintBottom_toBottomOf="@+id/avatar"
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/white"/>
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:tools="http://schemas.android.com/tools"
+                 android:drawable="@drawable/va_three"
+                 tools:ignore="NewApi">
+
+    <target
+            android:name="inner_group"
+            android:animation="@animator/sign_in_inner_group">
+    </target>
+
+    <target
+            android:name="outer_path"
+            android:animation="@animator/sign_in_outer_path">
+    </target>
+
+    <target
+            android:name="inner_path"
+            android:animation="@animator/sign_in_inner_path">
+    </target>
+
+    <target
+            android:name="number_path"
+            android:animation="@animator/sign_in_number_path">
+    </target>
+
+
+</animated-vector>

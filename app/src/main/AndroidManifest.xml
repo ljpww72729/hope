@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".main.mine.settings.SettingsActivity">
         </activity>
+        <activity android:name=".main.mine.profile.ProfileActivity">
+        </activity>
     </application>
 
 </manifest>

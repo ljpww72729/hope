@@ -59,11 +59,11 @@ public class ServerData {
             String img = "http://pb9.pstatp.com/video1609/957b000533e57d35a085";
             String video = "http://v11-tt.ixigua.com/671dd166901e0b9d39446bc42263806c/5b40482f/video/m/2205801e93d223b47ff839f34da10da41871158abed0000c92eed3047a5/";
             String author = "lipeng";
-            String avator = "https://www.biaobaiju.com/uploads/20180111/02/1515610232-vkCOFYmeKd.jpg";
+            String avatar = "https://cdn.duitang.com/uploads/item/201508/30/20150830105732_nZCLV.jpeg";
             String title = "测试啊";
             dataEntry.setTitle(title);
             dataEntry.setAuthor(author);
-            dataEntry.setAvator(avator);
+            dataEntry.setAvatar(avatar);
             dataEntry.setName(i + "");
             dataEntry.setImg_url(img);
             dataEntry.setVideo_url(video);

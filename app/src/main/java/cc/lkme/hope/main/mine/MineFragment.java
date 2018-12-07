@@ -1,5 +1,6 @@
 package cc.lkme.hope.main.mine;
 
+import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import cc.lkme.hope.BaseFragment;
 import cc.lkme.hope.R;
 import cc.lkme.hope.databinding.MineFragBinding;
+import cc.lkme.hope.main.mine.profile.ProfileActivity;
 import cc.lkme.hope.main.mine.settings.SettingsActivity;
 import cc.lkme.hope.utils.AutoClearedValue;
 
@@ -40,6 +42,16 @@ public class MineFragment extends BaseFragment {
         super.onActivityCreated(savedInstanceState);
         viewModel = (MineViewModel) obtainViewModel(getActivity(), MineViewModel.class);
         binding.get().setViewmodel(viewModel);
+        viewModel.getOpenProfile().observe(this, new Observer<Void>() {
+            @Override
+            public void onChanged(@Nullable Void aVoid) {
+                openProfile();
+            }
+        });
+    }
+
+    private void openProfile() {
+        ProfileActivity.start(getActivity(), new Bundle());
     }
 
     public void initToolBar(Toolbar toolbar) {

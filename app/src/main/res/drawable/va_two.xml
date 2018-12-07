@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="@dimen/sign_in_width"
+        android:height="@dimen/sign_in_height"
+        android:viewportWidth="@integer/sign_in_viewport_width"
+        android:viewportHeight="@integer/sign_in_viewport_height"
+        >
+
+    <group
+            android:name="outer_group"
+            android:translateX="@fraction/sign_in_outer_group_tx"
+            android:translateY="@fraction/sign_in_outer_group_ty">
+        <path
+                android:name="outer_path"
+                android:strokeWidth="@fraction/sign_in_number_path_stroke_width"
+                android:strokeColor="@color/number_dark"
+                android:trimPathEnd="@fraction/sign_in_outer_path_trim_path_end"
+                android:pathData="@string/sign_in_outer_path"/>
+
+    </group>
+
+    <group
+            android:name="inner_group"
+            android:translateX="@fraction/sign_in_outer_group_tx"
+            android:translateY="@fraction/sign_in_outer_group_ty">
+        <path
+                android:name="inner_path"
+                android:fillColor="@color/number_bright"
+                android:pathData="@string/sign_in_inner_path"/>
+    </group>
+
+
+    <group
+            android:name="number_group"
+            android:translateX="@fraction/sign_in_number_group_tx"
+            android:translateY="@fraction/sign_in_number_group_ty">
+        <path
+                android:name="number_path"
+                android:pathData="@string/sign_in_path_two"
+                android:strokeColor="@color/number_dark"
+                android:strokeWidth="@fraction/sign_in_number_path_stroke_width"/>
+    </group>
+
+
+</vector>

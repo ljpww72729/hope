@@ -10,4 +10,6 @@
     <color name="background">#21000000</color>
     <color name="foreground">#eeffffff</color>
     <color name="textHide">#21000000</color>
+    <color name="number_bright">#BDBDBD</color>
+    <color name="number_dark">#795548</color>
 </resources>

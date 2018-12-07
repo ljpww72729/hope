@@ -28,7 +28,7 @@
             <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_scrollFlags="scroll|enterAlways">
+                    app:layout_scrollFlags="enterAlways">
 
                 <android.support.v7.widget.Toolbar
                         android:id="@+id/toolbar"
@@ -48,11 +48,16 @@
 
         </android.support.design.widget.AppBarLayout>
 
+        <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                >
 
             <android.support.constraint.ConstraintLayout
                     android:layout_width="0dp"
@@ -182,6 +187,7 @@
             </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

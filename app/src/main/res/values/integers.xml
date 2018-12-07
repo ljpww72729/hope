@@ -5,4 +5,5 @@
     <integer name="gone">8</integer>
     <integer name="visible">0</integer>
     <integer name="invisible">4</integer>
+
 </resources>

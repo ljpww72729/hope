@@ -1,1 +1,1 @@
-include ':app', ':dkplayer-java', ':dkplayer-armv7a', ':dkplayer-ui'
+include ':app', ':dkplayer-java', ':dkplayer-armv7a',':dkplayer-x86', ':dkplayer-ui'

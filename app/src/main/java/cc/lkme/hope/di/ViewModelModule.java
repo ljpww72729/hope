@@ -5,7 +5,9 @@ import android.arch.lifecycle.ViewModelProvider;
 
 import cc.lkme.hope.ViewModelFactory;
 import cc.lkme.hope.main.HopeViewModel;
+import cc.lkme.hope.main.explore.ExploreViewModel;
 import cc.lkme.hope.main.mine.MineViewModel;
+import cc.lkme.hope.main.mine.profile.ProfileViewModel;
 import cc.lkme.hope.main.mine.settings.SettingsViewModel;
 import cc.lkme.hope.main.news.NewsViewModel;
 import cc.lkme.hope.main.news.recommend.RecommendViewModel;
@@ -55,6 +57,16 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SettingsViewModel.class)
     abstract ViewModel bindSettingsViewModel(SettingsViewModel settingsViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ExploreViewModel.class)
+    abstract ViewModel bindExploreViewModel(ExploreViewModel exploreViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileViewModel.class)
+    abstract ViewModel bindProfileViewModel(ProfileViewModel profileViewModel);
 
 
 }

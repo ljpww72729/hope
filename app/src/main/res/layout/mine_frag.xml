@@ -28,7 +28,7 @@
             <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_scrollFlags="scroll|enterAlways">
+                    app:layout_scrollFlags="enterAlways">
 
                 <android.support.v7.widget.Toolbar
                         android:id="@+id/toolbar"
@@ -48,313 +48,318 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/background"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@color/foreground"
-                    android:layout_marginTop="8dp"
-                    android:id="@+id/user_const">
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
 
-                <com.facebook.drawee.view.SimpleDraweeView
-                        android:layout_width="86dp"
-                        android:layout_height="86dp"
-                        android:id="@+id/avator"
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:actualImageUri="https://www.biaobaiju.com/uploads/20180111/02/1515610232-vkCOFYmeKd.jpg"
-                        app:roundAsCircle="true"
-                        app:roundingBorderColor="@color/black"
-                        app:roundingBorderWidth="1px"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
+                        android:background="@color/foreground"
                         android:layout_marginTop="8dp"
-                        />
+                        android:id="@+id/user_const">
 
-                <TextView
-                        android:text="小黄人"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/user_name"
-                        app:layout_constraintStart_toEndOf="@+id/avator"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/invitation_code"/>
+                    <com.facebook.drawee.view.SimpleDraweeView
+                            android:layout_width="86dp"
+                            android:layout_height="86dp"
+                            android:id="@+id/avatar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:actualImageUri="https://cdn.duitang.com/uploads/item/201508/30/20150830105732_nZCLV.jpeg"
+                            app:roundAsCircle="true"
+                            app:roundingBorderColor="@color/black"
+                            app:roundingBorderWidth="1px"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:onClick="@{() -> viewmodel.openProfile()}"
+                            />
 
-                <TextView
-                        android:text="邀请码"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/invitation_code"
-                        app:layout_constraintStart_toEndOf="@+id/avator"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintTop_toBottomOf="@+id/user_name"
-                        android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/line1"/>
+                    <TextView
+                            android:text="小黄人"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/user_name"
+                            app:layout_constraintStart_toEndOf="@+id/avatar"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/invitation_code"/>
 
-                <TextView
-                        android:text="编辑"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/user_edit"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        style="@style/Base.Title"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginBottom="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:onClick="@{() -> viewmodel.userEdit()}"
-                        app:layout_constraintBottom_toTopOf="@+id/line1"/>
+                    <TextView
+                            android:text="邀请码"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/invitation_code"
+                            app:layout_constraintStart_toEndOf="@+id/avatar"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/user_name"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toTopOf="@+id/line1"/>
 
-                <TextView
-                        android:text="复制"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/copy_invitation"
-                        app:layout_constraintStart_toEndOf="@+id/invitation_code"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/invitation_code"/>
+                    <TextView
+                            android:text="编辑"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/user_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginRight="16dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            style="@style/Base.Title"
+                            android:textColor="@color/colorAccent"
+                            android:layout_marginBottom="8dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:onClick="@{() -> viewmodel.userEdit()}"
+                            app:layout_constraintBottom_toTopOf="@+id/line1"/>
 
-                <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="1px"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@color/black"
-                        android:id="@+id/line1"
-                        app:layout_constraintTop_toBottomOf="@+id/avator"
-                        android:layout_marginTop="8dp"/>
+                    <TextView
+                            android:text="复制"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/copy_invitation"
+                            app:layout_constraintStart_toEndOf="@+id/invitation_code"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/invitation_code"/>
 
-                <TextView
-                        android:text="我的金币"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView7"
-                        app:layout_constraintTop_toBottomOf="@id/line1"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintEnd_toStartOf="@+id/textView8"/>
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="1px"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="@color/black"
+                            android:id="@+id/line1"
+                            app:layout_constraintTop_toBottomOf="@+id/avatar"
+                            android:layout_marginTop="8dp"/>
 
-                <TextView
-                        android:text="我的零钱"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView8"
-                        app:layout_constraintStart_toEndOf="@+id/textView7"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintEnd_toStartOf="@+id/textView9"/>
+                    <TextView
+                            android:text="我的金币"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView7"
+                            app:layout_constraintTop_toBottomOf="@id/line1"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintEnd_toStartOf="@+id/textView8"/>
 
-                <TextView
-                        android:text="今日阅读（分钟）"
-                        android:layout_width="wrap_content"
-                        android:layout_height="16dp"
-                        android:id="@+id/textView9"
-                        app:layout_constraintStart_toEndOf="@+id/textView8"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                    <TextView
+                            android:text="我的零钱"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView8"
+                            app:layout_constraintStart_toEndOf="@+id/textView7"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintEnd_toStartOf="@+id/textView9"/>
 
-                <TextView
-                        android:text="8000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/gold"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7"
-                        app:layout_constraintStart_toStartOf="@+id/textView7"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView7"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="16dp"/>
+                    <TextView
+                            android:text="今日阅读（分钟）"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:id="@+id/textView9"
+                            app:layout_constraintStart_toEndOf="@+id/textView8"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintEnd_toEndOf="parent"/>
 
-                <TextView
-                        android:text="99.21元"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/change"
-                        app:layout_constraintTop_toBottomOf="@+id/textView8"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintStart_toStartOf="@+id/textView8"
-                        app:layout_constraintEnd_toEndOf="@+id/textView8"
-                        />
+                    <TextView
+                            android:text="8000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/gold"
+                            app:layout_constraintTop_toBottomOf="@+id/textView7"
+                            app:layout_constraintStart_toStartOf="@+id/textView7"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintEnd_toEndOf="@+id/textView7"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginBottom="16dp"/>
 
-                <TextView
-                        android:text="120"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/today_read"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9"
-                        app:layout_constraintStart_toStartOf="@+id/textView9"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView9"
-                        />
+                    <TextView
+                            android:text="99.21元"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/change"
+                            app:layout_constraintTop_toBottomOf="@+id/textView8"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="@+id/textView8"
+                            app:layout_constraintEnd_toEndOf="@+id/textView8"
+                            />
+
+                    <TextView
+                            android:text="120"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/today_read"
+                            app:layout_constraintTop_toBottomOf="@+id/textView9"
+                            app:layout_constraintStart_toStartOf="@+id/textView9"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintEnd_toEndOf="@+id/textView9"
+                            />
 
 
-            </android.support.constraint.ConstraintLayout>
+                </android.support.constraint.ConstraintLayout>
 
-
-            <android.support.constraint.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/user_const"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/constraintLayout2"
-                    android:background="@color/foreground">
 
                 <android.support.constraint.ConstraintLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/user_const"
+                        android:layout_marginTop="8dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:background="?selectableItemBackground"
-                        android:onClick="@{() -> viewmodel.userEdit()}">
+                        android:id="@+id/constraintLayout2"
+                        android:background="@color/foreground">
 
-                    <TextView
-                            android:text="随机红包（每4个小时可领取一次）"
-                            android:layout_width="wrap_content"
+                    <android.support.constraint.ConstraintLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView5"
-                            android:layout_marginTop="8dp"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginStart="16dp"
-                            style="@style/Base.Title"/>
-
-                    <TextView
-                            android:text="限时活动，机不可失速来领取"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textView6"
-                            app:layout_constraintTop_toBottomOf="@+id/textView5"
-                            android:layout_marginTop="8dp"
-                            android:textColor="@color/colorAccent"
-                            app:layout_constraintStart_toStartOf="@+id/textView5"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginBottom="8dp"/>
-
-                    <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/va_chevron_right"
-                            android:id="@+id/imageView"
-                            android:layout_marginTop="8dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginBottom="8dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginRight="8dp"/>
+                            android:background="?selectableItemBackground"
+                            android:onClick="@{() -> viewmodel.userEdit()}">
+
+                        <TextView
+                                android:text="随机红包（每4个小时可领取一次）"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView5"
+                                android:layout_marginTop="8dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginStart="16dp"
+                                style="@style/Base.Title"/>
+
+                        <TextView
+                                android:text="限时活动，机不可失速来领取"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView6"
+                                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/colorAccent"
+                                app:layout_constraintStart_toStartOf="@+id/textView5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginBottom="8dp"/>
+
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/va_chevron_right"
+                                android:id="@+id/imageView"
+                                android:layout_marginTop="8dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"/>
+                    </android.support.constraint.ConstraintLayout>
                 </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@color/foreground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/constraintLayout">
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_invitation_code}"
+                            android:id="@+id/frameLayout"
+                            android:onClick="@{() -> viewmodel.userEdit()}">
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_activity}"
+                            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                            android:id="@+id/frameLayout2">
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_gold}"
+                            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+                            android:id="@+id/frameLayout3">
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_award}"
+                            app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
+                            app:split_line_visibility="@{@integer/gone}"
+                            >
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@color/foreground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="8dp">
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_record}"
+                            android:id="@+id/mine_record">
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:title="@{@string/mine_question}"
+                            app:split_line_visibility="@{@integer/gone}"
+                            app:layout_constraintTop_toBottomOf="@+id/mine_record"
+                            android:id="@+id/frameLayout5">
+
+                        <include layout="@layout/click_arrow_item"
+                                />
+                    </FrameLayout>
+
+
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:background="@color/foreground"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/constraintLayout">
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_invitation_code}"
-                        android:id="@+id/frameLayout"
-                        android:onClick="@{() -> viewmodel.userEdit()}">
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_activity}"
-                        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-                        android:id="@+id/frameLayout2">
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_gold}"
-                        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-                        android:id="@+id/frameLayout3">
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_award}"
-                        app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
-                        app:split_line_visibility="@{@integer/gone}"
-                        >
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:background="@color/foreground"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="8dp">
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_record}"
-                        android:id="@+id/font">
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:title="@{@string/mine_question}"
-                        app:split_line_visibility="@{@integer/gone}"
-                        app:layout_constraintTop_toBottomOf="@+id/font"
-                        android:id="@+id/frameLayout5">
-
-                    <include layout="@layout/click_arrow_item"
-                            />
-                </FrameLayout>
-
-
-            </android.support.constraint.ConstraintLayout>
-
-
-        </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
 
 
     </android.support.design.widget.CoordinatorLayout>
